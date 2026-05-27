@@ -109,12 +109,13 @@ Clinical-Gene-Expression-Analysis/
 
 ```r
 install.packages(c("tidyverse", "glmnet", "pROC", "shiny"))
+```
 ---
 ### 2. Run scripts
-source("scripts/01-data-simulation.R")
-source("scripts/02-pca-analysis.R")
-source("scripts/03-feature-selection.R")
-source("scripts/04-modeling.R")
+- source("scripts/01-data-simulation.R")
+- source("scripts/02-pca-analysis.R")
+- source("scripts/03-feature-selection.R")
+- source("scripts/04-modeling.R")
 ---
 ### 3. Launch dashboard
-shiny::runApp()
+- shiny::runApp()
