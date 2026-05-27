@@ -91,16 +91,16 @@ Clinical-Gene-Expression-Analysis/
   roc_curve.png
 
 -scripts/
-  01-data-simulation.R
-  02-pca-analysis.R
-  03-feature-selection.R
-  04-modeling.R
+  01-data-simulation.R; \\
+  02-pca-analysis.R; \\
+  03-feature-selection.R; \\
+  04-modeling.R; \\
 
 -functions/
   model_utils.R
 
--app.R
--README.md
+- app.R
+- README.md
 ---
 
 ## How to Run
