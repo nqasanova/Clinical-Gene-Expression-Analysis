@@ -5,17 +5,27 @@ library(glmnet)
 # Load data
 data <- read_csv("data/gene_expression_data.csv")
 
-# Prepare matrices
-x <- data |> select(starts_with("gene_")) |> as.matrix()
-y <- data$outcome
+# Prepare matrix for LASSO
+x <- data |>
+  select(starts_with("gene_")) |>   # select gene variables
+  as.matrix()
+
+y <- data$outcome                   # binary outcome
 
 # Fit LASSO model
-lasso_model <- cv.glmnet(x, y, family = "binomial", alpha = 1)
+lasso_model <- cv.glmnet(
+  x,
+  y,
+  family = "binomial",
+  alpha = 1
+)
 
-# Extract selected features
+# Extract coefficients
 coef_lasso <- coef(lasso_model, s = "lambda.min")
 
-selected_genes <- rownames(coef_lasso)[coef_lasso[,1] != 0]
+# Select important genes (REMOVE intercept!)
+selected_genes <- rownames(coef_lasso)[coef_lasso[, 1] != 0] |>
+  setdiff("(Intercept)")
 
 # Save selected genes
 write_csv(
