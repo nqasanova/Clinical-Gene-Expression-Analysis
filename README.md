@@ -79,28 +79,30 @@ An interactive dashboard to explore model outputs and results.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
+```
 Clinical-Gene-Expression-Analysis/
-
--data/
-  gene_expression_data.csv
-
--report/
-  selected_genes.csv
-  prediction_distribution.png
-  roc_curve.png
-
--scripts/
-  01-data-simulation.R; \\
-  02-pca-analysis.R; \\
-  03-feature-selection.R; \\
-  04-modeling.R; \\
-
--functions/
-  model_utils.R
-
-- app.R
-- README.md
+│
+├── data/
+│   └── gene_expression_data.csv
+│
+├── report/
+│   ├── selected_genes.csv
+│   ├── prediction_distribution.png
+│   └── roc_curve.png
+│
+├── scripts/
+│   ├── 01-data-simulation.R
+│   ├── 02-pca-analysis.R
+│   ├── 03-feature-selection.R
+│   └── 04-modeling.R
+│
+├── functions/
+│   └── model_utils.R
+│
+├── app.R
+└── README.md
+```
 ---
 
 ## How to Run
